@@ -63,7 +63,7 @@ export class LoginComponent {
           this.router.navigateByUrl("/dashboard-user");
         })
       }
-      else if (loginData.userEmail === "arpitshri21@gmail.com" && loginData.userPassword === "Arpit@221") {
+      else if (loginData.userEmail === "arpitshri21@gmail.com") {
         this.authService.login();
         this.snackBar.open('Admin Login successful', 'Close', {
           duration: 3000,
