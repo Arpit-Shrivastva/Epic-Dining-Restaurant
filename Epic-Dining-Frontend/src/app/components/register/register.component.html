@@ -1,0 +1,58 @@
+<div class="register flex bg-[#e76f51]">
+    <div class="logo w-[55%] mt-20">
+        <img class="w-full" src="../../../assets/register.svg" alt="register" />
+    </div>
+    <div class="res w-[40%] text-center" style="margin-top: 7%; margin-left: 2%;">
+        <p class="font-semibold text-2xl text-[#cddafd] mb-4">Create An Account</p>
+
+        <button mat-raised-button color="primary" class="mb-4">Sign up with Google</button>
+        <p class="text-center text-lg mb-4">Or</p>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex flex-col items-center">
+
+            <mat-form-field class="w-[80%] mb-4">
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" required formControlName="firstName" />
+                <mat-error *ngIf="firstNameVal?.errors?.['required']" class="text-[#0E2431]">First Name is
+                    required</mat-error>
+                <mat-error *ngIf="firstNameVal?.errors?.['minLength']" class="text-[#0E2431]">First Name should be in
+                    proper length</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-[80%] mb-4">
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" required formControlName="lastName" />
+            </mat-form-field>
+
+            <mat-form-field class="w-[80%] mb-4">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" required formControlName="userEmail" />
+                <mat-error *ngIf="userEmailVal?.errors?.['required']" class="text-[#0E2431]">Email is
+                    rquired</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-[80%] mb-4">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" required formControlName="userPassword" />
+                <mat-error *ngIf="userPasswordVal?.errors?.['required']" class="text-[#0E2431]">Password is
+                    rquired</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-[80%] mb-4">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput type="tel" required formControlName="mobileNumber" />
+                <mat-error *ngIf="mobileNumberVal?.errors?.['required']" class="text-[#0E2431]">Mobile Number is
+                    rquired</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-[80%] mb-4">
+                <mat-label>Gender</mat-label>
+                <input matInput type="text" required formControlName="gender" />
+                <mat-error *ngIf="gender?.errors?.['required']" class="text-[#0E2431]">Gender is rquired</mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" class="w-[40%] mb-4">Sign Up</button>
+        </form>
+        <p style="margin-top: 2%;">Already have an Account <a routerLink="/login" class="text-blue-700">Sign in</a></p>
+    </div>
+</div>

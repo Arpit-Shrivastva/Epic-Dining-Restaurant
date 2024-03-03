@@ -1,0 +1,50 @@
+<section class="mt-20 mb-[30%]">
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav style="background-color: #0E2431;" #drawer class="sidenav" fixedInViewport
+            [attr.role]="'navigation'" [mode]="'side'" [opened]="true">
+            <mat-nav-list style="margin-top: 40%;">
+                <a mat-list-item routerLink="ad-home">
+                    <mat-icon class="icon" style="color: #fff;">dashboard</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Dashboard</span>
+                </a>
+                <a mat-list-item routerLink="all-orders">
+                    <mat-icon class="icon" style="color: #fff;">shopping_cart</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Orders</span>
+                </a>
+                <a mat-list-item routerLink="all-query">
+                    <mat-icon class="icon" style="color: #fff;">question_answer</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Queries</span>
+                </a>
+                <a mat-list-item routerLink="profiles">
+                    <mat-icon class="icon" style="color: #fff;">account_circle</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Profile</span>
+                </a>
+                <a mat-list-item routerLink="all-address">
+                    <mat-icon class="icon" style="color: #fff;">home_pin</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Address</span>
+                </a>
+                <a mat-list-item routerLink="customers">
+                    <mat-icon class="icon" style="color: #fff;">people</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Customers</span>
+                </a>
+                <a mat-list-item routerLink="products">
+                    <mat-icon class="icon" style="color: #fff;">category</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Products</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon class="icon" style="color: #fff;">add</mat-icon>
+                    <span *ngIf="showText" (click)="addItem()" style="color: #fff;">Add Product</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon class="icon" style="color: #fff;">exit_to_app</mat-icon>
+                    <span *ngIf="showText" (click)="logout()" style="color: #fff;">Logout</span>
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</section>

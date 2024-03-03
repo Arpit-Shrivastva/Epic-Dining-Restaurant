@@ -1,0 +1,11 @@
+<section class="mx-5">
+    <p class="text-center font-bold text-2xl text-[#0E2431]">All Queries</p>
+    <div class="flex flex-wrap mx-2">
+        <div class="card bg-white p-4 rounded-md shadow-md my-5 w-[30%]" *ngFor="let queries of query">
+            <p class="font-semibold text-lg">Name : {{queries.fullName}}</p>
+            <p class="font-semibold text-base">Email : {{queries.email}}</p>
+            <p class="font-semibold text-base">Mobile Number : {{queries.mobileNumber}}</p>
+            <p class="text-lg">Message : {{queries.message}}</p>
+        </div>
+    </div>
+</section>

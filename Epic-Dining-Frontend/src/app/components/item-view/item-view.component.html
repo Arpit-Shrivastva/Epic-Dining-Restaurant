@@ -1,0 +1,18 @@
+<section class="mt-36 mb-14">
+    <div class="flex justify-around">
+        <div class="w-[40%]">
+            <img src="{{product?.productPhoto}}" alt="photo" class="w-full rounded" />
+        </div>
+        <div class="w-[50%]">
+            <p class="font-semibold text-2xl">Product Name : {{product?.productName}}</p>
+            <p class="text-base"> Product Category : {{product?.category}}</p>
+            <p class="text-lg">Product Description : {{product?.productDescription}}</p>
+            <p class="text-lg">Rating : <img src="../../../assets/stars.png" alt="" class="w-[100px] inline"></p>
+            <p class="font-semibold text-lg">Product Price : <img src="../../../assets/rs.png" alt=""
+                    class="w-5 inline">{{product?.productPrice}} /only</p>
+            <button type="submit"
+                class="w-40 rounded py-3 px-2 transition-all text-white font-semibold text-lg bg-[#4070F4] hover:bg-[#0E2431]"
+                (click)="addCart()"><mat-icon>shopping_bag</mat-icon> Add To Cart</button>
+        </div>
+    </div>
+</section>

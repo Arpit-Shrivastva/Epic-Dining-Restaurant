@@ -1,0 +1,11 @@
+<section class="mx-5">
+    <p class="text-center font-bold text-2xl text-[#0E2431]">All Profiles</p>
+    <div class="flex flex-wrap justify-around">
+        <div *ngFor="let user of register" class="card bg-white p-4 rounded-md shadow-md my-5 w-[30%]">
+            <p class="font-semibold text-lg">First Name : {{user.firstName}}</p>
+            <p class="font-semibold text-lg">Last Name : {{user.lastName}}</p>
+            <p class="font-semibold text-lg">Email : {{user.userEmail}}</p>
+            <p class="font-semibold text-lg">Mobile Number : {{user.mobileNumber}}</p>
+        </div>
+    </div>
+</section>

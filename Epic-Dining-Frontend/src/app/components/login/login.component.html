@@ -1,0 +1,44 @@
+<section class="login bg-[#e76f51]">
+    <div class="login_form flex w-full">
+
+        <div class="img w-[60%] mt-14">
+            <img class="w-full" src="../../../assets/login.svg" alt="login img">
+        </div>
+        <div class="form mt-28 w-[50%] ml-32">
+            <p class="font-bold text-3xl text-[#cddafd]" style="margin-bottom: 5%;">Login</p>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"
+                class="border border-[#0E2431] w-[70%] text-center rounded-lg p-10 bg-white"
+                style="box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
+                <mat-form-field class="w-full my-0.5">
+                    <mat-label>Enter your Email</mat-label>
+                    <input matInput type="email" formControlName="userEmail" required
+                        placeholder="Enter Your Email..." />
+                    <mat-error *ngIf="email?.errors?.['required']">Please Enter Valid Email Address</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="w-full my-0.5">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="userPassword" required
+                        placeholder="Enter Your Password" />
+                    <mat-error *ngIf="password?.errors?.['required']">
+                        Password is required.
+                    </mat-error>
+                    <mat-error *ngIf="password?.errors?.['pattern']">
+                        Password should have a minimum 8 characters with at least one symbol, one upper-case letter, one
+                        lower-case letter, and one number.
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid"
+                    class="w-full">Login</button>
+                <p href="" class="text-blue-500 text-center block mt-4 text-lg hover:underline cursor-pointer"
+                    (click)="newPassword()">Forgotten password?</p>
+            </form>
+            <div class="mt-5">
+                <p class="text-[18px] text-[#cddafd]">New Customer? <a routerLink="/register"
+                        class="text-blue-700 hover:underline">Register</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

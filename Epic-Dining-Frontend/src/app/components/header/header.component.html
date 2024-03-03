@@ -1,0 +1,48 @@
+<nav>
+    <div
+        class="nav-section flex justify-between items-center h-20 bg-[#f4f1de] fixed top-0 left-0 w-full z-50 shadow-md">
+        <div class="logo w-[45%] mx-3 flex items-center">
+            <span><img src="../../../assets/Epic-Dining-logo.png" alt="logo" class="w-20" /></span>
+            <span class="text-3xl font-semibold text-[#0E2431] font-[poppins] cursor-pointer" routerLink="/">Epic Dining
+                Restaurant</span>
+        </div>
+        <div class="menu flex w-[55%] justify-between">
+            <div class="list">
+                <ul class="flex">
+                    <li class="mx-4 font-semibold text-xl font-[poppins] text-[#0E2431] hover:text-[#4070F4]">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="mx-4 font-semibold text-xl font-[poppins] text-[#0E2431] hover:text-[#4070F4]">
+                        <a routerLink="about">About</a>
+                    </li>
+                    <li class="mx-4 font-semibold text-xl font-[poppins] text-[#0E2431] hover:text-[#4070F4]">
+                        <a routerLink="menu">Menu</a>
+                    </li>
+                    <li class="mx-4 font-semibold text-xl font-[poppins] text-[#0E2431] hover:text-[#4070F4]">
+                        <a routerLink="contact-us">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn me-8">
+                <ng-container *ngIf="!isUserLoggedIn(); else loggedIn">
+                    <a class="mx-3 text-l bg-[#4070F4] py-2 px-5 rounded-xl font-[poppins] text-[#fff] hover:bg-[#0E2431] hover:transition-all"
+                        routerLink="login">Login</a>
+                    <a class="mx-3 text-l bg-[#4070F4] py-2 px-5 rounded-xl font-[poppins] text-[#fff] hover:bg-[#0E2431] hover:transition-all"
+                        routerLink="register">Sign Up</a>
+                </ng-container>
+                <ng-template #loggedIn>
+                    <img src="../../../assets/User-Profile-PNG-Image.png" alt="" class="w-5 inline">
+                    <p class="font-semibold text-[#0E2431] inline cursor-pointer" routerLink="/dashboard-user">Welcome :
+                        {{userName}}</p>
+                    <span class="inline-block hover:text-[#4070F4] mx-2 cursor-pointer">
+                        <mat-icon routerLink="cart">
+                            shopping_cart
+                        </mat-icon>
+                    </span>
+                </ng-template>
+            </div>
+
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Query Form</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="queryForm" (ngSubmit)="onSubmit()" class="mx-4">
+        <mat-form-field class="full-width" class="w-full">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="fullName" required />
+            <mat-error *ngIf="fullName?.errors?.['required']">Full Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" class="w-full">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+            <mat-error *ngIf="email?.errors?.['required']">Email is required</mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">Invalid email address</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" class="w-full">
+            <mat-label>Phone Number</mat-label>
+            <input matInput formControlName="mobileNumber" />
+            <mat-error *ngIf="mobileNumber?.errors?.['required']">Phone Number is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" class="w-full">
+            <mat-label>Message</mat-label>
+            <textarea matInput formControlName="message"></textarea>
+            <mat-error *ngIf="message?.errors?.['required']">Message is required</mat-error>
+        </mat-form-field>
+
+        <div class="button-container">
+            <button mat-raised-button color="primary" type="submit" [disabled]="queryForm.invalid">Submit</button>
+            <button mat-raised-button color="warn" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</mat-card>

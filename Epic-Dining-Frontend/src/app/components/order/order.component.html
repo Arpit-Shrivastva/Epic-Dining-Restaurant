@@ -1,0 +1,10 @@
+<section class="my-5">
+    <p class="text-center font-bold text-2xl text-[#0E2431]">All Orders</p>
+    <div class="flex flex-wrap justify-around">
+        <div *ngFor="let ord of orders" class="card bg-white p-4 rounded-md shadow-md my-5 w-[30%]">
+            <p class="font-semibold text-lg">Products : {{ord.productName}}</p>
+            <p class="font-semibold text-lg">Quntity :{{ord.totalQuantity}}</p>
+            <p class="font-semibold text-lg">Price : {{ord.totalPrice}}</p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="my-10">
+    <p class="text-center font-bold text-2xl text-[#0E2431]">All Products</p>
+    <div class="mt-24 mx-8">
+        <div *ngFor="let menu of menus" class="m-4">
+            <div class="bg-white p-4 rounded-md shadow-md flex">
+                <img src="{{menu.productPhoto}}" alt="product-photo" class="rounded w-36 h-36" />
+                <div class="text-gray-700 ml-3">
+                    <div class="font-semibold">{{ menu.productName }}</div>
+                    <p class="text-sm">Description: {{ menu.productDescription }}</p>
+                    <p class="text-sm">Rating : <img src="../../../assets/stars.png" alt="" class="w-[100px] inline">
+                    </p>
+                    <p>Price: <img src="../../../assets/rs.png" alt="" class="w-4 inline text-sm"> {{ menu.productPrice
+                        }} / only
+                    </p>
+                </div>
+                <span class="inline-block hover:text-orange-500 cursor-pointer"
+                    (click)="deleteProduct()"><mat-icon>delete</mat-icon></span>
+            </div>
+        </div>
+    </div>
+</section>

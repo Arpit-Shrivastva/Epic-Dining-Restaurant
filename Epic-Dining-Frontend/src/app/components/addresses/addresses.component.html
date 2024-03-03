@@ -1,0 +1,14 @@
+<section class="mx-5">
+    <p class="text-center font-bold text-2xl text-[#0E2431]">All Addresess</p>
+    <div class="flex flex-wrap justify-around">
+        <div class="card bg-white p-4 rounded-md shadow-md my-5 w-[30%]" *ngFor="let add of address">
+            <p class="font-semibold text-lg">User Name : {{add.userName}}</p>
+            <p class="font-semibold text-lg">Mobile Number : {{add.mobileNumber}}</p>
+            <p class="font-semibold text-lg">Address : {{add.address}}</p>
+            <p class="font-semibold text-lg">City : {{add.cityName}}</p>
+            <p class="font-semibold text-lg">Pin Code : {{add.userPincode}}</p>
+            <p class="font-semibold text-lg">State : {{add.stateName}}</p>
+            <p class="font-semibold text-lg">Country : {{add.country}}</p>
+        </div>
+    </div>
+</section>

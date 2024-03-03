@@ -1,0 +1,35 @@
+<section class="mt-20">
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav style="background-color: #0E2431;" #drawer class="sidenav" fixedInViewport
+            [attr.role]="'navigation'" [mode]="'side'" [opened]="true">
+
+            <mat-nav-list style="margin-top: 40%;">
+                <a mat-list-item>
+                    <mat-icon class="icon" style="color: #fff;">dashboard</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Dashboard</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon class="icon" style="color: #fff;">shopping_cart</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Orders</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon class="icon" style="color: #fff;">account_circle</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Profile</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon class="icon" style="color: #fff;">location_on</mat-icon>
+                    <span *ngIf="showText" style="color: #fff;">Addresses</span>
+                </a>
+                <a mat-list-item>
+                    <mat-icon class="icon" style="color: #fff;">exit_to_app</mat-icon>
+                    <span *ngIf="showText" (click)="logout()" style="color: #fff;">Logout</span>
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</section>
